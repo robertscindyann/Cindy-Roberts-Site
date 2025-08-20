@@ -1,0 +1,726 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* CSS Reset End */
+
+/* Define Color Variables */
+:root {
+  --primary-color: lab(28% -14 -14);
+  --gray-color: lab(94% -0 0);
+  --accent-color: lab(70% 5 30);
+  /* Define other colors as needed */
+}
+
+/* Global Styles */
+body {
+  font-family: "Mukta", sans-serif;
+  color: #000;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* This ensures the body takes at least the full height of the viewport */
+  margin: 0;
+}
+main {
+  flex: 1;
+}
+/* Header Styles */
+header {
+  position: relative;
+  height: 60px;
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+}
+header div {
+  max-width: 1000px;
+}
+#whiteLogo {
+  width: 10rem;
+  margin-left: 20px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+#hamburger {
+  position: absolute;
+  top: 23px;
+  right: 20px;
+  fill: #fff;
+}
+
+#navContainer {
+  display: none;
+}
+
+input[type="checkbox"] {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  opacity: 0;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  background-color: #fff;
+  position: absolute;
+  top: 60px;
+}
+
+nav li a {
+  display: block;
+  text-decoration: none;
+  padding: 20px;
+  border-bottom: 1px solid #ededed;
+  color: lab(28% -14 -14);
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+nav li {
+  text-align: center;
+}
+
+/* Heading Styles */
+h1 {
+  font-size: 1.3rem;
+  margin: 110px 0;
+  text-align: center;
+  padding: 0 15px;
+  line-height: 26px;
+}
+span {
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin: 20px 0 15px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+p {
+  line-height: 25px;
+  margin: 10px 0;
+}
+
+figcaption {
+  margin: 20px 0;
+  line-height: 25px;
+}
+article img {
+  max-width: 100%;
+}
+#about,
+#portfolio {
+  margin: 0 20px;
+  max-width: 1000px;
+}
+#portfolio {
+  margin-bottom: 40px;
+}
+#profileImg img {
+  height: 200px;
+  border: 1px solid #d3d3d3;
+  border-radius: 50%;
+  display: block;
+  margin: 10px 0;
+}
+#portfolio article {
+  border-bottom: 1px solid #f4f4f4;
+  padding-bottom: 40px;
+}
+#portfolio article:last-child {
+  border-bottom: transparent;
+}
+#portfolio h2 {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+#portfolio h3 {
+  font-weight: 700;
+  margin: 30px 0 20px;
+  font-size: 1rem;
+}
+.colorLinks {
+  color: var(--primary-color);
+}
+
+#contact h1,
+#about h1 {
+  text-align: left;
+  font-weight: 700;
+  margin: 10px 0;
+  padding: 0;
+}
+
+/* Contact Paragraph Styles */
+#contact {
+  margin: 0 20px;
+}
+
+/* Footer Styles */
+footer {
+  background-color: var(--primary-color);
+  text-align: center;
+  padding-bottom: 20px;
+  margin-top: auto;
+}
+
+/* Social Links Styles */
+.social {
+  width: 200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.social_link {
+  text-decoration: none;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+.social_link svg {
+  fill: #fff;
+}
+
+/* Small Text Styles */
+small {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+}
+
+/* Form Section Styles */
+#contact {
+  /* background-color: #f4f4f4; */
+  padding: 20px 0;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+}
+.intro {
+  margin-bottom: 20px;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 400px; /* Adjust the max-width as needed */
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* Style form inputs */
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+/* Style the submit button */
+button {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 40px;
+}
+
+/* Add hover effect to the submit button */
+button:hover {
+  background-color: #808080;
+}
+
+#nikeCaseStudy,
+#lunaFairy,
+#travelPage,
+#greenLeaf {
+  margin: 0 20px;
+  max-width: 1000px;
+}
+
+#diabetesPage strong,
+#greenLeaf strong {
+  font-weight: 700;
+}
+#diabetesPage li,
+#greenLeaf li {
+  list-style: disc;
+  margin-left: 20px;
+  padding-bottom: 10px;
+  line-height: 25px;
+}
+
+#diabetesPage {
+  margin: 10px 20px 0;
+  max-width: 1000px;
+}
+#designProcess div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#greenLeaf h1,
+#travelPage h1,
+#diabetesPage h1 {
+  text-align: left;
+  font-weight: 700;
+  line-height: 24px;
+  font-size: 1.3rem;
+  padding: 0;
+  margin: 20px 0;
+}
+#diabetesMockups img {
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Luna Fairy Styles */
+
+#lunaFairy h1 {
+  padding-left: 0;
+  text-align: left;
+  font-weight: 700;
+  margin: 20px 0;
+  line-height: 25px;
+}
+#lunaFairy h2 {
+  font-size: 1.1rem;
+}
+article img {
+  max-width: 100%;
+  display: block;
+}
+
+#lunaFairy,
+#easyBank,
+#nikeAd {
+  margin-bottom: 20px;
+}
+/* Nike Ad Styles */
+
+#nikeCaseStudy h1 {
+  padding: 20px 0 0;
+  margin: 0;
+  text-align: left;
+  font-weight: 700;
+  font-size: 1.3rem;
+  line-height: 25px;
+}
+#nikeCaseStudy header {
+  background-color: transparent;
+}
+#nikeCaseStudy h2 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+#nikeImageContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+#designProcess div {
+  margin-top: 20px;
+  padding: 10px;
+}
+
+/* Media Query Styles */
+@media screen and (min-width: 600px) {
+  header {
+    display: flex;
+    align-items: center;
+  }
+  header div {
+    width: 90vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    justify-content: space-between;
+  }
+  #whiteLogo {
+    margin-top: 0;
+    margin-left: 0;
+  }
+
+  #hamburger {
+    display: none;
+  }
+  input[type="checkbox"] {
+    display: none;
+  }
+  #navContainer {
+    display: inline-block;
+    position: static;
+    grid-column: 2/-1;
+    justify-self: end;
+  }
+  nav ul {
+    position: static;
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+    width: 250px;
+  }
+  nav li {
+    border-bottom: none;
+  }
+  nav li a {
+    color: #fff;
+    border-bottom: none;
+    padding: 0;
+  }
+  nav li a:hover {
+    text-decoration: underline;
+  }
+  h1 {
+    font-size: 1.5rem;
+    margin: 210px 0;
+    line-height: 30px;
+  }
+  span {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.7rem;
+  }
+
+  #portfolio img {
+    max-width: 100%;
+    display: block;
+  }
+
+  #about {
+    margin: 0 auto;
+    width: 90vw;
+  }
+  /* Nike Case Study Styles */
+
+  #nikeCaseStudy h2 {
+    margin-top: 20px;
+  }
+
+  #portfolio article {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 30px 40px 20px;
+    margin-bottom: 20px;
+  }
+  #portfolio h3 {
+    margin-top: 10px;
+  }
+
+  header div,
+  #introduction,
+  #contact,
+  #about {
+    margin: 0 auto;
+    width: 90vw;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  #introduction,
+  header div,
+  #portfolio,
+  #diabetesPage,
+  #lunaFairy,
+  #nikeCaseStudy,
+  #travelPage,
+  #contact,
+  #about,
+  #greenLeaf {
+    width: 80vw;
+    margin: 0 auto;
+  }
+  #travel {
+    margin-bottom: 40px;
+  }
+
+  #diabetesMockups div {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(5, auto);
+    gap: 40px;
+
+    margin: 0 auto;
+  }
+
+  #diabetesMockups img {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+    margin: 0;
+  }
+  #diabetesMockups img:first-child {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  #diabetesMockups img:nth-child(2) {
+    grid-column: 2/-1;
+    grid-row: 1/2;
+  }
+  #diabetesMockups img:nth-child(3) {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    max-width: 100%;
+    height: auto;
+  }
+  #diabetesMockups img:nth-child(4) {
+    grid-column: 2/-1;
+    grid-row: 2/-1;
+    max-width: 100%;
+    height: auto;
+  }
+  #diabetesMockups img:nth-child(5) {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    max-width: 100%;
+    height: auto;
+    align-self: center;
+  }
+  #diabetesMockups img:nth-child(6) {
+    grid-column: 1/2;
+    grid-row: 4/-1;
+    max-width: 100%;
+    height: auto;
+    align-self: end;
+  }
+  #designProcess div {
+    max-width: 75%;
+    margin: 30px auto;
+  }
+}
+@media screen and (min-width: 980px) {
+  #portfolio {
+    margin: 0 auto;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(6, auto);
+    column-gap: 40px;
+  }
+  #portfolio article {
+    margin: 0 0 40px;
+  }
+
+  #portfolio h2 {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+  }
+  #portfolio h3 {
+    margin: 0;
+    padding-bottom: 20px;
+  }
+  #diabetes {
+    grid-column: 1/-1;
+    grid-row: 2/3;
+  }
+  #easyBank {
+    grid-column: 1/-1;
+    grid-row: 6/-1;
+  }
+  #fairyBook {
+    grid-column: 1/2;
+    grid-row: 3/5;
+  }
+  #nikeAd {
+    grid-column: 2/-1;
+    grid-row: 3/4;
+  }
+  #greenleaf {
+    grid-column: 2/-1;
+    grid-row: 4/-1;
+  }
+  #travel {
+    grid-column: 1/-1;
+    grid-row: 5/6;
+  }
+
+  #introduction,
+  header div,
+  #portfolio,
+  #diabetesPage,
+  #lunaFairy,
+  #nikeCaseStudy,
+  #travelPage,
+  #contact,
+  #about,
+  #greenLeaf {
+    width: 75vw;
+    margin: 0 auto;
+  }
+  #introduction h1 {
+    font-size: 2rem;
+    line-height: 40px;
+  }
+  span {
+    font-size: 2.5rem;
+  }
+  #portfolio h2 {
+    font-size: 1.5rem;
+  }
+  #portfolio h3 {
+    font-size: 1.2rem;
+  }
+
+  #portfolio article h3 {
+    padding: 0 0 20px;
+  }
+
+  .imgContainer img {
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+
+    object-fit: cover;
+  }
+  #fairyBook img {
+    max-height: 800px;
+  }
+  #designProcess div {
+    max-width: 70%;
+    margin: 30px auto;
+  }
+}
